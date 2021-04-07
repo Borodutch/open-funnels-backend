@@ -16,6 +16,8 @@ import config from './main.config';
       validationSchema: Joi.object({
         PORT: Joi.number().default(3000),
         MONGO_URI: Joi.string().required(),
+        ADMIN_LOGIN: Joi.string().required(),
+        ADMIN_PASSWORD: Joi.string().required(),
       }),
       validationOptions: {
         allowUnknown: true,

@@ -3,4 +3,8 @@ export default () => ({
   mongo: {
     uri: process.env.MONGO_URI,
   },
+  admin: {
+    login: process.env.ADMIN_LOGIN,
+    password: process.env.ADMIN_PASSWORD,
+  },
 });
