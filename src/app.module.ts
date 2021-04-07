@@ -7,6 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { FunnelModule } from './funnel/funnel.module';
 import { AuthModule } from './auth/auth.module';
 import { EventModule } from './event/event.module';
+import { UserModule } from './user/user.module';
 import config from './main.config';
 
 @Module({
@@ -37,6 +38,7 @@ import config from './main.config';
     FunnelModule,
     AuthModule,
     EventModule,
+    UserModule,
   ],
 })
 export class AppModule {}
