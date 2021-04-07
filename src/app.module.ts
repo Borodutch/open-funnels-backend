@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { FunnelModule } from './funnel/funnel.module';
 import { AuthModule } from './auth/auth.module';
+import { EventModule } from './event/event.module';
 import configuration from './config/configuration';
 
 @Module({
@@ -35,6 +36,7 @@ import configuration from './config/configuration';
     }),
     FunnelModule,
     AuthModule,
+    EventModule,
   ],
 })
 export class AppModule {}
