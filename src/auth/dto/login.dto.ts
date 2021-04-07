@@ -1,6 +1,7 @@
 import { User } from 'src/user/interfaces/user.interface';
+import { IsNotEmpty } from 'class-validator';
 
 export class LoginDto implements User {
-  login: string;
-  password: string;
+  @IsNotEmpty() login: string;
+  @IsNotEmpty() password: string;
 }
