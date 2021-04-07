@@ -59,6 +59,105 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             </li>
+                            <li class="link">
+                                <a href="modules/AuthModule.html" data-type="entity-link">AuthModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#controllers-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' : 'data-target="#xs-controllers-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' }>
+                                            <span class="icon ion-md-swap"></span>
+                                            <span>Controllers</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' :
+                                            'id="xs-controllers-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' }>
+                                            <li class="link">
+                                                <a href="controllers/AuthController.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AuthController</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                        'data-target="#injectables-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' : 'data-target="#xs-injectables-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' :
+                                        'id="xs-injectables-links-module-AuthModule-dc82756e13a5b8659582f8d22deeee9a"' }>
+                                        <li class="link">
+                                            <a href="injectables/AuthService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>AuthService</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/EventModule.html" data-type="entity-link">EventModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#controllers-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' : 'data-target="#xs-controllers-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' }>
+                                            <span class="icon ion-md-swap"></span>
+                                            <span>Controllers</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' :
+                                            'id="xs-controllers-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' }>
+                                            <li class="link">
+                                                <a href="controllers/EventController.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">EventController</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                        'data-target="#injectables-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' : 'data-target="#xs-injectables-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' :
+                                        'id="xs-injectables-links-module-EventModule-2c3988fb70a321d11f49c1f94ee638a2"' }>
+                                        <li class="link">
+                                            <a href="injectables/EventService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>EventService</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/FunnelModule.html" data-type="entity-link">FunnelModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#controllers-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' : 'data-target="#xs-controllers-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' }>
+                                            <span class="icon ion-md-swap"></span>
+                                            <span>Controllers</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' :
+                                            'id="xs-controllers-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' }>
+                                            <li class="link">
+                                                <a href="controllers/FunnelController.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">FunnelController</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                        'data-target="#injectables-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' : 'data-target="#xs-injectables-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' :
+                                        'id="xs-injectables-links-module-FunnelModule-eaec285fc2e6aa6f7ec6256ecd522c97"' }>
+                                        <li class="link">
+                                            <a href="injectables/FunnelService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>FunnelService</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
                 </ul>
                 </li>
                     <li class="chapter">

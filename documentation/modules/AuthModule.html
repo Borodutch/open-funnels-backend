@@ -34,7 +34,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li>AppModule</li>
+    <li>AuthModule</li>
 </ol>
 
 
@@ -51,7 +51,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app.module.ts</code>
+            <code>src/auth/auth.module.ts</code>
         </p>
 
 
@@ -60,17 +60,20 @@
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Imports<a href="https://angular.io/api/core/NgModule#imports" target="_blank" title="Official documentation about module imports"><span
+                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank"
+                            title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="../injectables/AuthService.html">AuthService</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Controllers<a href="https://docs.nestjs.com/controllers" target="_blank" title="Official documentation about module controllers"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="../modules/AuthModule.html">AuthModule</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../modules/EventModule.html">EventModule</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../modules/FunnelModule.html">FunnelModule</a>
+                            <a href="../controllers/AuthController.html">AuthController</a>
                         </li>
                     </ul>
                 </div>
@@ -114,7 +117,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthModule.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
