@@ -32,6 +32,12 @@ $ yarn test:e2e
 $ yarn test:cov
 ```
 
+## Generate documentation
+
+```bash
+$ yarn doc
+```
+
 ## License
 
 This project is [MIT licensed](LICENSE).
