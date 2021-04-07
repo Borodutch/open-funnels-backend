@@ -7,7 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { FunnelModule } from './funnel/funnel.module';
 import { AuthModule } from './auth/auth.module';
 import { EventModule } from './event/event.module';
-import configuration from './config/configuration';
+import config from './main.config';
 
 @Module({
   imports: [
@@ -21,7 +21,7 @@ import configuration from './config/configuration';
         abortEarly: true,
       },
       isGlobal: true,
-      load: [configuration],
+      load: [config],
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'documentation'),
