@@ -750,6 +750,14 @@
   dependencies:
     path-to-regexp "0.1.7"
 
+"@nestjs/terminus@^7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/terminus/-/terminus-7.1.2.tgz#0d6e0500c7c524725442c0a66e3543f2a2a7de41"
+  integrity sha512-kiwNNU5ADkOkcdv8/X0FXJ7IXSlFyVhdDyNhNHD+Z9Eu78fulCLYQGQC6Jq4QVgQKwSrdJpFxIhXBMbrWnW3xA==
+  dependencies:
+    check-disk-space "2.1.0"
+    deprecate "^1.1.1"
+
 "@nestjs/testing@^7.5.1":
   version "7.6.15"
   resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.6.15.tgz#eed34846a8b2b5ddb0ff6bd74cdcb4344c364c40"
@@ -2003,6 +2011,11 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
+check-disk-space@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/check-disk-space/-/check-disk-space-2.1.0.tgz#2e77fe62f30d9676dc37a524ea2008f40c780295"
+  integrity sha512-f0nx9oJF/AVF8nhSYlF1EBvMNnO+CXyLwKhPvN1943iOMI9TWhQigLZm80jAf0wzQhwKkzA8XXjyvuVUeGGcVQ==
+
 cheerio-select-tmp@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/cheerio-select-tmp/-/cheerio-select-tmp-0.1.1.tgz#55bbef02a4771710195ad736d5e346763ca4e646"
@@ -2538,6 +2551,11 @@ depd@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
   integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
+
+deprecate@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/deprecate/-/deprecate-1.1.1.tgz#4632e981fc815eeaf00be945a40359c0f8bf9913"
+  integrity sha512-ZGDXefq1xknT292LnorMY5s8UVU08/WKdzDZCUT6t9JzsiMSP4uzUhgpqugffNVcT5WC6wMBiSQ+LFjlv3v7iQ==
 
 destroy@~1.0.4:
   version "1.0.4"
