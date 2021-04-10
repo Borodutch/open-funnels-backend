@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>UserService</li>
+  <li>JwtStrategy</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -53,7 +53,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/user/user.service.ts</code>
+            <code>src/auth/strategies/jwt.strategy.ts</code>
         </p>
 
 
@@ -73,7 +73,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isAdmin">isAdmin</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#validate">validate</a>
                             </li>
                         </ul>
                     </td>
@@ -140,18 +141,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAdmin"></a>
+                    <a name="validate"></a>
                     <span class="name">
                         <b>
-                            isAdmin
+                            <span class="modifier">Async</span>
+                            validate
                         </b>
-                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>isAdmin(loginDto: <a href="../classes/LoginDto.html">LoginDto</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validate(payload: <a href="../interfaces/ITokenPayload.html">ITokenPayload</a>)</code>
                 </td>
             </tr>
 
@@ -173,9 +176,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>loginDto</td>
+                                    <td>payload</td>
                                     <td>
-                                                <code><a href="../classes/LoginDto.html" target="_self" >LoginDto</a></code>
+                                                <code><a href="../interfaces/ITokenPayload.html" target="_self" >ITokenPayload</a></code>
                                     </td>
 
                                     <td>
@@ -190,7 +193,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/ITokenPayload.html" target="_self" >Promise&lt;ITokenPayload&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -236,7 +239,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'JwtStrategy.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
