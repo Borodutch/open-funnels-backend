@@ -25,7 +25,7 @@ async function bootstrap() {
       },
     }),
   );
-  app.setGlobalPrefix('v1');
+  app.setGlobalPrefix('api');
   await app.listen(port);
   console.log(`Open funnels backend is running on ${await app.getUrl()}`);
 }

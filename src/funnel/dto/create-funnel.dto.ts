@@ -1,8 +1,15 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsArray, IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateFunnelDto {
-  @IsNotEmpty() name: string;
+  @IsNotEmpty()
+  @IsString()
+  name: string;
+
   description?: string;
-  @IsNotEmpty() steps: string;
+
+  @IsNotEmpty()
+  @IsArray()
+  steps: [string];
+
   queries?: string;
 }

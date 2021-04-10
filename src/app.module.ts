@@ -30,7 +30,7 @@ import config from './main.config';
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'documentation'),
-      exclude: ['/v1*'],
+      exclude: ['/api*'],
     }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
