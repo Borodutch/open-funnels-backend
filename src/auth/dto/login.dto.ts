@@ -1,7 +1,12 @@
-import { User } from 'src/user/interfaces/user.interface';
-import { IsNotEmpty } from 'class-validator';
+import { IUser } from 'src/user/interfaces/user.interface';
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export class LoginDto implements User {
-  @IsNotEmpty() login: string;
-  @IsNotEmpty() password: string;
+export class LoginDto implements IUser {
+  @IsNotEmpty()
+  @IsString()
+  login: string;
+
+  @IsNotEmpty()
+  @IsString()
+  password: string;
 }

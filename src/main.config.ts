@@ -5,6 +5,6 @@ export default () => ({
   },
   admin: {
     login: process.env.ADMIN_LOGIN,
-    password: process.env.ADMIN_PASSWORD,
+    password: '' + process.env.ADMIN_PASSWORD,
   },
 });
