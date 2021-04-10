@@ -20,6 +20,7 @@ import config from './main.config';
         MONGO_URI: Joi.string().required(),
         ADMIN_LOGIN: Joi.string().required(),
         ADMIN_PASSWORD: Joi.string().required(),
+        JWT_SECRET: Joi.string().required(),
       }),
       validationOptions: {
         allowUnknown: true,

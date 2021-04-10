@@ -7,4 +7,7 @@ export default () => ({
     login: process.env.ADMIN_LOGIN,
     password: '' + process.env.ADMIN_PASSWORD,
   },
+  jwt: {
+    secret: '' + process.env.JWT_SECRET,
+  },
 });
