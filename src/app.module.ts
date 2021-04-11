@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { EventModule } from './event/event.module';
 import { UserModule } from './user/user.module';
 import { StatusController } from './status/status.controller';
+import { MetaModule } from './meta/meta.module';
 import config from './main.config';
 
 @Module({
@@ -45,6 +46,7 @@ import config from './main.config';
     AuthModule,
     EventModule,
     UserModule,
+    MetaModule,
   ],
   controllers: [StatusController],
 })

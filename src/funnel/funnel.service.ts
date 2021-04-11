@@ -11,8 +11,12 @@ export class FunnelService {
     private readonly funnelModel: Model<FunnelDocument>,
   ) {}
 
-  async create(createFunnelDto: CreateFunnelDto): Promise<Funnel> {
+  async create(createFunnelDto: CreateFunnelDto): Promise<FunnelDocument> {
     const createdFunnel = new this.funnelModel(createFunnelDto);
     return createdFunnel.save();
+  }
+
+  async findOne(id: string): Promise<FunnelDocument> {
+    return this.funnelModel.findById(id).exec();
   }
 }
