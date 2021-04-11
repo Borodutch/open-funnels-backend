@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Controllers</li>
-  <li>EventController</li>
+  <li>MetaController</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -51,14 +51,14 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/event/event.controller.ts</code>
+            <code>src/meta/meta.controller.ts</code>
         </p>
 
             <p class="comment">
                 <h3>Prefix</h3>
             </p>
             <p class="comment">
-                <code>event</code>
+                <code>meta</code>
             </p>
 
 
@@ -80,7 +80,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getDistinct">getDistinct</a>
+                                <a href="#getMeta">getMeta</a>
                             </li>
                         </ul>
                     </td>
@@ -103,20 +103,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getDistinct"></a>
+                    <a name="getMeta"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            getDistinct
+                            getMeta
                         </b>
-                        <a href="#getDistinct"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getMeta"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getDistinct(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>getMeta(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -124,7 +124,7 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Get(&#x27;distinct/:value&#x27;)<br /></code>
+                    <code>@Get(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
@@ -145,7 +145,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>value</td>
+                                    <td>id</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -162,7 +162,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;any[]&gt;</code>
+                        <b>Returns : </b>    <code>{}</code>
 
                     </div>
                     <div class="io-description">
@@ -207,7 +207,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'EventController.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'MetaController.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

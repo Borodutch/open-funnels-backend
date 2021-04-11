@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>EventService</li>
+  <li>MetaService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -53,7 +53,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/event/event.service.ts</code>
+            <code>src/meta/meta.service.ts</code>
         </p>
 
 
@@ -74,11 +74,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#countUsersInSteps">countUsersInSteps</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#distinct">distinct</a>
+                                <a href="#getMeta">getMeta</a>
                             </li>
                         </ul>
                     </td>
@@ -98,7 +94,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(eventModel: <a href="../classes/Event.html">Model<EventDocument></a>)</code>
+<code>constructor(eventService: <a href="../injectables/EventService.html">EventService</a>, funnelService: <a href="../injectables/FunnelService.html">FunnelService</a>)</code>
                     </td>
                 </tr>
 
@@ -116,10 +112,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>eventModel</td>
+                                                        <td>eventService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/Event.html" target="_self" >Model&lt;EventDocument&gt;</a></code>
+                                                                        <code><a href="../injectables/EventService.html" target="_self" >EventService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>funnelService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FunnelService.html" target="_self" >FunnelService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -145,20 +153,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="countUsersInSteps"></a>
+                    <a name="getMeta"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            countUsersInSteps
+                            getMeta
                         </b>
-                        <a href="#countUsersInSteps"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getMeta"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>countUsersInSteps(steps: string[], timeStart?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, timeEnd?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>getMeta(funnelId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -180,99 +188,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>steps</td>
+                                    <td>funnelId</td>
                                     <td>
-                                            <code>string[]</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>timeStart</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>timeEnd</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        Yes
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;number&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="distinct"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            distinct
-                        </b>
-                        <a href="#distinct"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>distinct(index: <a href="../interfaces/IDistinct.html">IDistinct</a>)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>index</td>
-                                    <td>
-                                                <code><a href="../interfaces/IDistinct.html" target="_self" >IDistinct</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -287,7 +205,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;any[]&gt;</code>
+                        <b>Returns : </b>    <code>Promise&lt;number[]&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -333,7 +251,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'EventService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'MetaService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
