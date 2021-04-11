@@ -12,5 +12,6 @@ import { Funnel, FunnelSchema } from './models/funnel.model';
   ],
   controllers: [FunnelController],
   providers: [FunnelService],
+  exports: [FunnelService],
 })
 export class FunnelModule {}

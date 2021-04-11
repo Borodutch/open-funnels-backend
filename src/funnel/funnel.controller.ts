@@ -25,13 +25,10 @@ export class FunnelController {
 
   @Get(':id')
   async getFunnel(@Param('id') id: string): Promise<FunnelDocument> {
-    if (id.match(/^[0-9a-fA-F]{24}$/)) {
-      const funnel = this.funnelService.findOne(id);
-      if (!funnel) {
-        throw new NotFoundException();
-      }
-      return funnel;
+    const funnel = this.funnelService.findOne(id);
+    if (!funnel) {
+      throw new NotFoundException();
     }
-    throw new BadRequestException();
+    return funnel;
   }
 }
