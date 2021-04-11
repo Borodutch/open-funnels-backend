@@ -32,7 +32,16 @@ export class EventService {
   }
 
   // TODO: get users from first step of funnel
-  async getFirstStepUsers(id: string) {}
+  async getFirstStepUsers(name: string) {
+    return this.eventModel.aggregate([
+      { $match: { name: name } },
+      {
+        $group: {
+          _id: '$userId',
+        },
+      },
+    ]);
+  }
 
   async getEventsForUser(id: string): Promise<any[]> {
     return this.eventModel.aggregate([

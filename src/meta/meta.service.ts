@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { EventService } from 'src/event/event.service';
 import { FunnelService } from 'src/funnel/funnel.service';
 
@@ -10,10 +10,23 @@ export class MetaService {
   ) {}
 
   async getMeta(funnelId: string) {
+    const funnel = await this.funnelService.findOne(funnelId);
+    if (funnel) {
+      const allUsers = await this.eventService.getFirstStepUsers(
+        funnel.steps[0],
+      );
+      const usersSteps: any[] = [];
+      for (const user of allUsers) {
+        console.log(user['_id']);
+        usersSteps.push(await this.eventService.getEventsForUser(user['_id']));
+      }
+      return usersSteps;
+    }
+    throw new NotFoundException();
     // TODO: implement for specific funnel
     // return this.eventService.findAndAggregate([
     //   { name: 'add_todo_opened', query: { platform: 'web' } },
     // ]);
-    return this.eventService.getEventsForUser('606ca60703ed18e45226c503');
+    // return this.eventService.getFirstStepUsers('add_todo_opened');
   }
 }
