@@ -11,7 +11,11 @@ export class EventService {
     private readonly eventModel: Model<EventDocument>,
   ) {}
 
-  async countUsersInSteps(steps: string[]) {
+  async countUsersInSteps(
+    steps: string[],
+    timeStart?: number,
+    timeEnd?: number,
+  ): Promise<number> {
     const users = await this.eventModel.aggregate([
       {
         $group: {

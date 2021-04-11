@@ -9,18 +9,16 @@ export class MetaService {
     private readonly funnelService: FunnelService,
   ) {}
 
-  async getMeta(funnelId: string) {
+  async getMeta(funnelId: string): Promise<number[]> {
     const funnel = await this.funnelService.findOne(funnelId);
-    if (funnel) {
-      const funnelMeta: number[] = [];
-      const steps = funnel.steps;
-      for (let index = steps.length - 1; index >= 0; index--) {
-        funnelMeta.push(
-          await this.eventService.countUsersInSteps(steps.slice(index)),
-        );
-      }
-      return funnelMeta;
+    if (!funnel) throw new NotFoundException();
+    const funnelMeta: number[] = [];
+    const steps = funnel.steps;
+    for (let index = steps.length - 1; index >= 0; index--) {
+      funnelMeta.push(
+        await this.eventService.countUsersInSteps(steps.slice(index)),
+      );
     }
-    throw new NotFoundException();
+    return funnelMeta;
   }
 }
