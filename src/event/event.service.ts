@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, Types } from 'mongoose';
+import { Model } from 'mongoose';
 import { IDistinct } from './interfaces/distinct.interface';
 import { Event, EventDocument } from './models/event.model';
 
@@ -11,48 +11,17 @@ export class EventService {
     private readonly eventModel: Model<EventDocument>,
   ) {}
 
-  // TODO: maybe useless method
-  async findAndAggregate(steps: any[]): Promise<any[]> {
-    const aggregatedData: any[] = [];
-    for (const step of steps) {
-      aggregatedData.push(
-        await this.eventModel.aggregate([
-          { $match: { name: step.name } },
-          { $match: { ...step.query } },
-          {
-            $group: {
-              _id: '$userId',
-              count: { $sum: 1 },
-            },
-          },
-        ]),
-      );
-    }
-    return aggregatedData;
-  }
-
-  // TODO: get users from first step of funnel
-  async getFirstStepUsers(name: string) {
-    return this.eventModel.aggregate([
-      { $match: { name: name } },
-      {
-        $group: {
-          _id: '$userId',
-        },
-      },
-    ]);
-  }
-
-  async getEventsForUser(id: string): Promise<any[]> {
-    return this.eventModel.aggregate([
-      { $match: { userId: id } },
+  async countUsersInSteps(steps: string[]) {
+    const users = await this.eventModel.aggregate([
       {
         $group: {
           _id: '$userId',
           events: { $push: '$name' },
         },
       },
+      { $match: { events: { $all: steps } } },
     ]);
+    return users;
   }
 
   async distinct(index: IDistinct): Promise<any[]> {

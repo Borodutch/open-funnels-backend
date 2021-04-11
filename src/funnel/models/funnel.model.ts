@@ -10,10 +10,10 @@ export class Funnel {
   description?: string;
 
   @Prop({ type: [String], required: true })
-  steps: [string];
+  steps: string[];
 
   @Prop({ type: MongooseSchema.Types.Mixed, default: [] })
-  queries?: [string];
+  queries?: string[];
 }
 
 export type FunnelDocument = Funnel & Document;

@@ -12,21 +12,11 @@ export class MetaService {
   async getMeta(funnelId: string) {
     const funnel = await this.funnelService.findOne(funnelId);
     if (funnel) {
-      const allUsers = await this.eventService.getFirstStepUsers(
-        funnel.steps[0],
+      const funnelUsers = await this.eventService.countUsersInSteps(
+        funnel.steps,
       );
-      const usersSteps: any[] = [];
-      for (const user of allUsers) {
-        console.log(user['_id']);
-        usersSteps.push(await this.eventService.getEventsForUser(user['_id']));
-      }
-      return usersSteps;
+      return funnelUsers;
     }
     throw new NotFoundException();
-    // TODO: implement for specific funnel
-    // return this.eventService.findAndAggregate([
-    //   { name: 'add_todo_opened', query: { platform: 'web' } },
-    // ]);
-    // return this.eventService.getFirstStepUsers('add_todo_opened');
   }
 }
