@@ -21,7 +21,10 @@ export class EventService {
       },
       { $match: { events: { $all: steps } } },
     ]);
-    return users;
+    if (steps.length === 1) {
+      return users.length;
+    }
+    return users.length;
   }
 
   async distinct(index: IDistinct): Promise<any[]> {
