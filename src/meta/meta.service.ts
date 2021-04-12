@@ -21,14 +21,12 @@ export class MetaService {
             steps: steps,
           }),
         );
-        console.log(steps);
       } else {
         funnelMeta.push(
           await this.eventService.countUsersInSteps({
             steps: steps.slice(0, -index),
           }),
         );
-        console.log(steps.slice(0, -index));
       }
     }
     return funnelMeta;
