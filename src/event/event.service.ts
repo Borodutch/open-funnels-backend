@@ -11,7 +11,6 @@ export class EventService {
     private readonly eventModel: Model<EventDocument>,
   ) {}
 
-  //TODO: Implement platform
   async countUsersInSteps(funnelData: {
     steps: string[];
     platform?: string;
