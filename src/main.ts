@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
+//TODO: Implement all controllers JWT-auth
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { logger: true });
   const configService = app.get(ConfigService);
