@@ -248,9 +248,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Funnel.html" data-type="entity-link">Funnel</a>
                             </li>
                             <li class="link">
-                                <a href="classes/GetFunnelQuery.html" data-type="entity-link">GetFunnelQuery</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/LoginDto.html" data-type="entity-link">LoginDto</a>
                             </li>
                         </ul>
