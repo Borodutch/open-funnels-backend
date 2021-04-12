@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Schema as MongooseSchema } from 'mongoose';
+import { Document } from 'mongoose';
 
 @Schema({ timestamps: true })
 export class Funnel {
@@ -12,8 +12,8 @@ export class Funnel {
   @Prop({ type: [String], required: true })
   steps: string[];
 
-  @Prop({ type: MongooseSchema.Types.Mixed, default: [] })
-  queries?: string[];
+  @Prop({ type: String, default: 'all' })
+  platform?: string;
 }
 
 export type FunnelDocument = Funnel & Document;

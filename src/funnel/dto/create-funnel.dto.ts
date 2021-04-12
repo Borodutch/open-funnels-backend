@@ -11,5 +11,5 @@ export class CreateFunnelDto {
   @IsArray()
   steps: [string];
 
-  queries?: string;
+  platform?: string;
 }

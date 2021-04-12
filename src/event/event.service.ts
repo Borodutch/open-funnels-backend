@@ -11,11 +11,12 @@ export class EventService {
     private readonly eventModel: Model<EventDocument>,
   ) {}
 
-  async countUsersInSteps(
-    steps: string[],
-    timeStart?: number,
-    timeEnd?: number,
-  ): Promise<number> {
+  //TODO: Implement platform
+  async countUsersInSteps(funnelData: {
+    steps: string[];
+    platform?: string;
+    timeStart?: number;
+  }): Promise<number> {
     const users = await this.eventModel.aggregate([
       {
         $group: {
@@ -23,12 +24,25 @@ export class EventService {
           events: { $push: '$name' },
         },
       },
-      { $match: { events: { $all: steps } } },
+      { $match: { events: { $all: funnelData.steps } } },
     ]);
-    if (steps.length === 1) {
+    if (funnelData.steps.length === 1) {
       return users.length;
     }
-    return users.length;
+    let funnelCount = 0;
+    for (const user of users) {
+      const firstStepIndex = user.events.indexOf(funnelData.steps[0]);
+      const lastStepIndex = user.events.lastIndexOf(
+        funnelData.steps[funnelData.steps.length - 1],
+      );
+      if (firstStepIndex > lastStepIndex) continue;
+      const searchArray = user.events.slice(firstStepIndex, lastStepIndex + 1);
+      const hasSteps = funnelData.steps.every((val) => {
+        return searchArray.includes(val);
+      });
+      if (hasSteps) funnelCount++;
+    }
+    return funnelCount;
   }
 
   async distinct(index: IDistinct): Promise<any[]> {

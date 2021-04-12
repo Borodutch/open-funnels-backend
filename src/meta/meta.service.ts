@@ -15,9 +15,21 @@ export class MetaService {
     const funnelMeta: number[] = [];
     const steps = funnel.steps;
     for (let index = steps.length - 1; index >= 0; index--) {
-      funnelMeta.push(
-        await this.eventService.countUsersInSteps(steps.slice(index)),
-      );
+      if (index === 0) {
+        funnelMeta.push(
+          await this.eventService.countUsersInSteps({
+            steps: steps,
+          }),
+        );
+        console.log(steps);
+      } else {
+        funnelMeta.push(
+          await this.eventService.countUsersInSteps({
+            steps: steps.slice(0, -index),
+          }),
+        );
+        console.log(steps.slice(0, -index));
+      }
     }
     return funnelMeta;
   }
