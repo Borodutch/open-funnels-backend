@@ -22,6 +22,11 @@ export class FunnelController {
     return this.funnelService.create(createFunnelDto);
   }
 
+  @Get()
+  async getFunnels(): Promise<FunnelDocument[]> {
+    return this.funnelService.findAll();
+  }
+
   @Get(':id')
   async getFunnel(@Param('id') id: string): Promise<FunnelDocument> {
     const funnel = this.funnelService.findOne(id);

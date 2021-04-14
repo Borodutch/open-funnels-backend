@@ -20,4 +20,8 @@ export class FunnelService {
     if (!id.match(/^[0-9a-fA-F]{24}$/)) throw new BadRequestException();
     return this.funnelModel.findById(id).exec();
   }
+
+  async findAll(): Promise<FunnelDocument[]> {
+    return this.funnelModel.find({});
+  }
 }
