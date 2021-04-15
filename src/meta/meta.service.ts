@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { EventService } from 'src/event/event.service';
 import { FunnelService } from 'src/funnel/funnel.service';
+import { IMeta } from './interfaces/meta.interface';
 
 @Injectable()
 export class MetaService {
@@ -9,13 +10,8 @@ export class MetaService {
     private readonly funnelService: FunnelService,
   ) {}
 
-  async getMeta(
-    funnelId: string,
-    platform: string,
-    start: string,
-    end: string,
-  ): Promise<number[]> {
-    const funnel = await this.funnelService.findOne(funnelId);
+  async getMeta(meta: IMeta): Promise<number[]> {
+    const funnel = await this.funnelService.findOne(meta.funnelId);
     if (!funnel) throw new NotFoundException();
     const funnelMeta: number[] = [];
     const steps = funnel.steps;
@@ -24,18 +20,18 @@ export class MetaService {
         funnelMeta.push(
           await this.eventService.countUsersInSteps({
             steps: steps,
-            platform: platform,
-            dateStart: start,
-            dateEnd: end,
+            platform: meta.platform,
+            dateStart: meta.start,
+            dateEnd: meta.end,
           }),
         );
       } else {
         funnelMeta.push(
           await this.eventService.countUsersInSteps({
             steps: steps.slice(0, -index),
-            platform: platform,
-            dateStart: start,
-            dateEnd: end,
+            platform: meta.platform,
+            dateStart: meta.start,
+            dateEnd: meta.end,
           }),
         );
       }

@@ -14,6 +14,11 @@ export class MetaController {
     @Query('ds') dateStart: string,
     @Query('de') dateEnd: string,
   ): Promise<number[]> {
-    return this.metaService.getMeta(id, platform, dateStart, dateEnd);
+    return this.metaService.getMeta({
+      funnelId: id,
+      end: dateEnd,
+      platform: platform,
+      start: dateStart,
+    });
   }
 }

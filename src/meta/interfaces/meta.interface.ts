@@ -1,3 +1,6 @@
 export interface IMeta {
-  steps: [{ count: number }[]];
+  funnelId: string;
+  platform: string;
+  start: string;
+  end: string;
 }
