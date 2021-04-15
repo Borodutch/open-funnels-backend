@@ -12,8 +12,8 @@ export class MetaService {
   async getMeta(
     funnelId: string,
     platform: string,
-    start: number,
-    end: number,
+    start: string,
+    end: string,
   ): Promise<number[]> {
     const funnel = await this.funnelService.findOne(funnelId);
     if (!funnel) throw new NotFoundException();

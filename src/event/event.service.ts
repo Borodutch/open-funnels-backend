@@ -13,11 +13,14 @@ export class EventService {
 
   async countUsersInSteps(funnelData: {
     steps: string[];
-    platform?: string;
-    dateStart?: number;
-    dateEnd?: number;
+    platform: string;
+    dateStart: string;
+    dateEnd: string;
   }): Promise<number> {
+    const startDate = parseInt(funnelData.dateStart, 10);
+    const endDate = parseInt(funnelData.dateEnd, 10);
     const users = await this.eventModel.aggregate([
+      { $match: { timestamp: { $gte: startDate, $lt: endDate } } },
       { $match: { platform: funnelData.platform } },
       {
         $group: {
