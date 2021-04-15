@@ -38,6 +38,7 @@ import config from './main.config';
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         uri: configService.get<string>('mongo.uri'),
+        useCreateIndex: true,
       }),
       inject: [ConfigService],
     }),

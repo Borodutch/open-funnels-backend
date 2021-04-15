@@ -10,7 +10,7 @@ async function bootstrap() {
       cors: true,
     });
     const configService = app.get(ConfigService);
-    const port = configService.get('port');
+    const port = configService.get<number>('port');
     app.use(
       helmet({
         contentSecurityPolicy: false,
