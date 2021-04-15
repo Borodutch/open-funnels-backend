@@ -4,7 +4,7 @@ export default () => ({
     uri: process.env.MONGO_URI,
   },
   admin: {
-    login: process.env.ADMIN_LOGIN,
+    login: '' + process.env.ADMIN_LOGIN,
     password: '' + process.env.ADMIN_PASSWORD,
   },
   jwt: {
