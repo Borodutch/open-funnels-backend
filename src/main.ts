@@ -22,7 +22,7 @@ async function bootstrap() {
       '\x1b[1m\x1b[42m\x1b[37m Open funnels',
       '\x1b[0m\x1b[36m started:',
       '\x1b[0mbackend is running on',
-      `\x1b[1m${await app.getUrl()}`,
+      `\x1b[1m${await app.getUrl()}\x1b[0m`,
     );
   } catch (error) {
     console.log(error);
