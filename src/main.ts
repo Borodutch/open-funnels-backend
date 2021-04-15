@@ -4,7 +4,10 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { logger: true, cors: true });
+  const app = await NestFactory.create(AppModule, {
+    logger: false,
+    cors: true,
+  });
   const configService = app.get(ConfigService);
   const port = configService.get('port');
   app.use(
