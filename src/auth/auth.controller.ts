@@ -16,13 +16,15 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
-  async login(@Body(new ValidationPipe()) loginDto: LoginDto) {
+  async login(
+    @Body(new ValidationPipe()) loginDto: LoginDto,
+  ): Promise<{ access_token: string }> {
     return this.authService.validateUser(loginDto);
   }
 
   @UseGuards(JwtAuthGuard)
   @Get('me')
-  getCurrentUser(@Request() req) {
-    return req.user;
+  getCurrentUser(@Request() req): string {
+    return req.user as string;
   }
 }

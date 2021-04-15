@@ -13,7 +13,7 @@ export class MetaController {
     @Query('p') platform: string,
     @Query('ds') dateStart: string,
     @Query('de') dateEnd: string,
-  ) {
+  ): Promise<number[]> {
     return this.metaService.getMeta(id, platform, dateStart, dateEnd);
   }
 }
