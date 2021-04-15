@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   NotFoundException,
   Param,
@@ -18,6 +19,12 @@ export class FunnelController {
   constructor(private readonly funnelService: FunnelService) {}
 
   @UseGuards(JwtAuthGuard)
+  @Get()
+  async getFunnels(): Promise<FunnelDocument[]> {
+    return this.funnelService.findAll();
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Post()
   async create(
     @Body(new ValidationPipe()) createFunnelDto: CreateFunnelDto,
@@ -26,9 +33,9 @@ export class FunnelController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Get()
-  async getFunnels(): Promise<FunnelDocument[]> {
-    return this.funnelService.findAll();
+  @Delete(':id')
+  async deleteFunnel(@Param('id') id: string): Promise<void> {
+    this.funnelService.deleteOne(id);
   }
 
   @UseGuards(JwtAuthGuard)

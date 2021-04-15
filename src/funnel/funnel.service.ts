@@ -21,7 +21,12 @@ export class FunnelService {
     return this.funnelModel.findById(id).exec();
   }
 
+  async deleteOne(id: string): Promise<void> {
+    if (!id.match(/^[0-9a-fA-F]{24}$/)) throw new BadRequestException();
+    this.funnelModel.findByIdAndDelete(id).exec();
+  }
+
   async findAll(): Promise<FunnelDocument[]> {
-    return this.funnelModel.find({});
+    return this.funnelModel.find({}).exec();
   }
 }
