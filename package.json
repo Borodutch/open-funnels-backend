@@ -6,7 +6,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "doc": "npx @compodoc/compodoc -p tsconfig.json -n \"Open funnels backend\" --disableSourceCode --minimal  && git add . && git commit -m 'Documentation update' && git push",
+    "doc": "npx @compodoc/compodoc -p tsconfig.json -n \"Open funnels backend\" --disableSourceCode --minimal",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
