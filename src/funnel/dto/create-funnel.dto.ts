@@ -9,7 +9,5 @@ export class CreateFunnelDto {
 
   @IsNotEmpty()
   @IsArray()
-  steps: [string];
-
-  platform?: string;
+  steps: string[];
 }

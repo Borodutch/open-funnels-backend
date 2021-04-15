@@ -11,9 +11,6 @@ export class Funnel {
 
   @Prop({ type: [String], required: true })
   steps: string[];
-
-  @Prop({ type: String, default: 'all' })
-  platform?: string;
 }
 
 export type FunnelDocument = Funnel & Document;
