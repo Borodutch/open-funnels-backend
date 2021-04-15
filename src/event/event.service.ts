@@ -14,9 +14,11 @@ export class EventService {
   async countUsersInSteps(funnelData: {
     steps: string[];
     platform?: string;
-    timeStart?: number;
+    dateStart?: number;
+    dateEnd?: number;
   }): Promise<number> {
     const users = await this.eventModel.aggregate([
+      { $match: { platform: funnelData.platform } },
       {
         $group: {
           _id: '$userId',
