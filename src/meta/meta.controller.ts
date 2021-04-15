@@ -6,13 +6,13 @@ import { MetaService } from './meta.service';
 export class MetaController {
   constructor(private readonly metaService: MetaService) {}
 
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @Get(':id')
   async getMeta(
     @Param('id') id: string,
     @Query('p') platform: string,
-    @Query('ds') dateStart: number,
-    @Query('de') dateEnd: number,
+    @Query('ds') dateStart: string,
+    @Query('de') dateEnd: string,
   ) {
     return this.metaService.getMeta(id, platform, dateStart, dateEnd);
   }
