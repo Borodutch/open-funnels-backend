@@ -35,6 +35,10 @@ export class FunnelController {
   @UseGuards(JwtAuthGuard)
   @Delete()
   async deleteFunnel(@Body('id') id: string): Promise<void> {
+    const funnel = this.funnelService.findOne(id);
+    if (!funnel) {
+      throw new NotFoundException();
+    }
     this.funnelService.deleteOne(id);
   }
 
