@@ -20,6 +20,7 @@ $ yarn start
 $ yarn start:dev
 
 # production mode
+$ yarn build
 $ yarn start:prod
 ```
 
