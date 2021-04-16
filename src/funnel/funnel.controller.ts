@@ -33,8 +33,8 @@ export class FunnelController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Delete(':id')
-  async deleteFunnel(@Param('id') id: string): Promise<void> {
+  @Delete()
+  async deleteFunnel(@Body('id') id: string): Promise<void> {
     this.funnelService.deleteOne(id);
   }
 
