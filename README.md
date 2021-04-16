@@ -1,4 +1,7 @@
-# Open funnels backend
+<h1 align="center">Open funnels backend</h1>
+<p align="center">
+<img src="https://raw.githubusercontent.com/backmeupplz/open-funnels-backend/main/img/logo.png" />
+</p>
 
 ## Installation
 
