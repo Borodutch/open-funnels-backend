@@ -5,12 +5,14 @@ import {
   Get,
   NotFoundException,
   Param,
+  Patch,
   Post,
   UseGuards,
   ValidationPipe,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { CreateFunnelDto } from './dto/create-funnel.dto';
+import { UpdateFunnelDto } from './dto/update-funnel.dto';
 import { FunnelService } from './funnel.service';
 import { FunnelDocument } from './models/funnel.model';
 
@@ -40,6 +42,15 @@ export class FunnelController {
       throw new NotFoundException();
     }
     this.funnelService.deleteOne(id);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch(':id')
+  async updateFunnel(
+    @Param('id') id: string,
+    @Body(new ValidationPipe()) updateFunnelDto: UpdateFunnelDto,
+  ) {
+    return this.funnelService.updateOne(id, updateFunnelDto);
   }
 
   @UseGuards(JwtAuthGuard)

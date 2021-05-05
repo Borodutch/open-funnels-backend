@@ -1,7 +1,8 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, UpdateWriteOpResult } from 'mongoose';
 import { CreateFunnelDto } from './dto/create-funnel.dto';
+import { UpdateFunnelDto } from './dto/update-funnel.dto';
 import { Funnel, FunnelDocument } from './models/funnel.model';
 
 @Injectable()
@@ -21,9 +22,19 @@ export class FunnelService {
     return this.funnelModel.findById(id).exec();
   }
 
-  async deleteOne(id: string): Promise<void> {
+  async deleteOne(id: string): Promise<FunnelDocument> {
     if (!id.match(/^[0-9a-fA-F]{24}$/)) throw new BadRequestException();
-    this.funnelModel.findByIdAndDelete(id).exec();
+    return this.funnelModel.findByIdAndDelete(id).exec();
+  }
+
+  async updateOne(
+    id: string,
+    updateFunnelDto: UpdateFunnelDto,
+  ): Promise<UpdateWriteOpResult> {
+    if (!id.match(/^[0-9a-fA-F]{24}$/)) throw new BadRequestException();
+    return this.funnelModel
+      .updateOne({ _id: id }, { $set: updateFunnelDto })
+      .exec();
   }
 
   async findAll(): Promise<FunnelDocument[]> {
