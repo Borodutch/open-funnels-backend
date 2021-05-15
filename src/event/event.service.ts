@@ -19,17 +19,35 @@ export class EventService {
   }): Promise<number> {
     const startDate = parseInt(funnelData.dateStart, 10);
     const endDate = parseInt(funnelData.dateEnd, 10);
-    const users = await this.eventModel.aggregate([
-      { $match: { timestamp: { $gte: startDate, $lt: endDate } } },
-      { $match: { platform: funnelData.platform } },
-      {
-        $group: {
-          _id: '$userId',
-          events: { $push: '$name' },
-        },
-      },
-      { $match: { events: { $all: funnelData.steps } } },
-    ]);
+    let users: any;
+    if (funnelData.platform === 'all') {
+      users = await this.eventModel
+        .aggregate([
+          { $match: { timestamp: { $gte: startDate, $lt: endDate } } },
+          {
+            $group: {
+              _id: '$userId',
+              events: { $push: '$name' },
+            },
+          },
+          { $match: { events: { $all: funnelData.steps } } },
+        ])
+        .exec();
+    } else {
+      users = await this.eventModel
+        .aggregate([
+          { $match: { timestamp: { $gte: startDate, $lt: endDate } } },
+          { $match: { platform: funnelData.platform } },
+          {
+            $group: {
+              _id: '$userId',
+              events: { $push: '$name' },
+            },
+          },
+          { $match: { events: { $all: funnelData.steps } } },
+        ])
+        .exec();
+    }
     if (funnelData.steps.length === 1) {
       return users.length;
     }
